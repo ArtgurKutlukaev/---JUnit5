@@ -36,13 +36,14 @@ public class BonusServiseTest {
     }
 
     @Test
-    void shouldCalculateForRegisteredAndOverLimit1() {
+    void
+    shouldBeCalculatedForThoseWhoAreNotRegisteredAndHaveExceededTheLimit() {
         BonusService service = new BonusService();
 
         // подготавливаем данные:
-        long amount = 2000;
+        long amount = 2000000;
         boolean registered = false;
-        long expected = 20;
+        long expected = 500;
 
         // вызываем целевой метод:
         long actual = service.calculate(amount, registered);
@@ -53,7 +54,7 @@ public class BonusServiseTest {
 
 
     @Test
-    void shouldCalculateForRegisteredAndOverLimit2() {
+    void shouldBeCalculatedForNonRegisteredAndBelowTheLimit() {
         BonusService service = new BonusService();
 
         // подготавливаем данные:
